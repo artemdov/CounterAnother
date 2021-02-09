@@ -1,0 +1,20 @@
+.App{
+    border: 2px solid black;
+    width: 400px;
+    height: 400px;
+    display: inline-block;
+}
+.Display{
+    font-size: 50px;
+    text-align: center;
+}
+.Buttons{
+    display: inline-block;
+    margin: 150px 30px;
+
+}
+.button{
+    height: 25px;
+    width: 65px;
+
+}

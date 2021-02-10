@@ -16,5 +16,9 @@
 .button{
     height: 25px;
     width: 65px;
+}
+.DisplayWithInput{
+    display: inline-grid;
+    padding: 20px;
 
 }

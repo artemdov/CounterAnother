@@ -11,6 +11,7 @@ function App() {
     const [valueStart, setValueStart] = useState(0)
     const [change, setChange] = useState(false)
 
+
     const Increment = () => {
         if (count < valueMax) {
             setCount(count + 1)
@@ -20,21 +21,24 @@ function App() {
         setCount(valueStart)
     }
     const Set = () => {
-       
-        setChange(true)
-    }
-    const ChangeClickSet = () => {
-        setChange(false)
+        setChange(!change)
     }
 
 
     return (
         <div className={s.App}>
-            <DisplayWithInput setChange={ChangeClickSet} setValueStart={setValueStart} setValueMax={setValueMax}/>
-            <Display change={change} count={count}/>
-            <Button actionButton={Increment} title={'inc'}/>
-            <Button actionButton={Reset} title={'res'}/>
-            <Button actionButton={Set} title={'set'}/>
+            { change && <>
+                 <DisplayWithInput titleValueMax={'Max'} titleValueMin={'Start'}
+                                   setValueStart={setValueStart} setValueMax={setValueMax}/>
+                <> <Button actionButton={Set} title={'set'}/></>
+            </>}
+
+            {!change && <>
+                <Display count={count}/>
+                <> <Button actionButton={Increment} title={'inc'}/></>
+                <> <Button actionButton={Reset} title={'res'}/></>
+                <> <Button actionButton={Set} title={'set'}/></>
+            </>}
 
         </div>
     )

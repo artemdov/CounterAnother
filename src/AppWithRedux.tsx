@@ -23,7 +23,7 @@ export function AppWithRedux() {
     const change = useSelector<AppStateType, ChangeType>(state => state.change)
 
     const Increment = () => {
-        if(count < valueMax) {
+        if (count < valueMax) {
             dispatch(IncrementValueAC())
         }
     }

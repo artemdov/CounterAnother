@@ -10,10 +10,10 @@ export type ButtonType = {
 }
 
 export const Button = (props: ButtonType) => {
-    const ChangeHandler =() => {}
+    const ChangeHandler = () => {props.actionButton()}
 
     return <div className={s.Buttons}>
-        <button className={s.button} onClick={() => {props.actionButton()}}>
+        <button className={s.button} onClick={ChangeHandler}>
             {props.title}
         </button>
     </div>

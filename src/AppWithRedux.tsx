@@ -1,5 +1,5 @@
 import {useDispatch, useSelector} from "react-redux";
-import React, {useState} from "react";
+import React from "react";
 import {AppStateType} from "./store/store";
 import {IncrementValueAC, ResetStartValueAC, SetChangeValueAC} from "./store/reducers/reducer";
 import s from "./App.module.css";
@@ -19,7 +19,6 @@ export function AppWithRedux() {
 
     const count = useSelector<AppStateType, CountType>(state => state.count)
     const valueMax = useSelector<AppStateType, ValueMaxType>(state => state.valueMax)
-    const valueStart = useSelector<AppStateType, ValueStartType>(state => state.valueStart)
     const change = useSelector<AppStateType, ChangeType>(state => state.change)
 
     const Increment = () => {
